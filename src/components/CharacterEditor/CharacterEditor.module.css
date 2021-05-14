@@ -4,9 +4,11 @@
 }
 
 .maxWidthWrapper {
+  isolation: isolate;
 }
 
 .header {
+  width: 65%;
   padding-bottom: 64px;
 }
 
@@ -24,7 +26,53 @@
 }
 
 .characterWrapper {
+  position: fixed;
+  top: 128px;
+  right: 32px;
+  min-height: 500px;
+  width: 50%;
 }
 
 .controlColumn {
+  width: 50%;
+}
+
+.bg {
+  position: fixed;
+  bottom: 0;
+  background-color: hsl(195deg, 20%, 86%);
+  height: 40%;
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .maxWidthWrapper {
+    position: relative;
+  }
+
+  .header {
+    width: 100%;
+  }
+
+  .characterWrapper {
+    position: static;
+    height: 600px;
+  }
+
+  .bg {
+    visibility: hidden;
+  }
+
+  .controlColumn {
+    position: absolute;
+    width: 100%;
+    top: 650px;
+    right: 0;
+    left: 0;
+    margin-right: auto;
+    margin-left: auto;
+    overflow-x: scroll;
+    white-space: nowrap;
+    display: flex;
+  }
 }
